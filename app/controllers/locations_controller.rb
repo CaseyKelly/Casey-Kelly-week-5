@@ -7,27 +7,36 @@ class LocationsController < ApplicationController
 
     def new
       @location = Location.new
+      @submit_name = "Create Location"
+    end
+
+    def edit
+      @submit_name = "Update Location"
     end
 
     def create
       @location = Location.new(location_params)
       if @location.save
-      redirect_to @location
+      redirect_to locations_path
         else
           render @location
       end
     end
 
     def show
-      @location = Location.find(params[:id])
+    end
+
+    def destroy
+      @location.destroy
+      redirect_to locations_url, notice: 'Project was successfully deleted.'
     end
 
     private
-    def set_elocation
+    def set_location
       @location = Location.find(params[:id])
     end
 
     def location_params
-       params.require(:location).permit(:name, :address, :zip_code)
+       params.require(:location).permit(:name, :address, :zipcode)
     end
 end
