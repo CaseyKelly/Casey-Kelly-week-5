@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   end
 
   resources :events
-  
-root 'welcome#index'
+
+root 'locations#index'
 
 end
