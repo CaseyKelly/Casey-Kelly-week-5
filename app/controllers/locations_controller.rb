@@ -35,6 +35,7 @@ class LocationsController < ApplicationController
     end
 
     def destroy
+
       @location.destroy
       redirect_to locations_url, notice: 'Project was successfully deleted.'
     end

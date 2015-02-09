@@ -42,6 +42,12 @@
       <td><%= event.description %></td>
       <td><%= event.date %></td>
       <td><%= event.requires_id %></td>
+      <td>
+        <div class="text-right">
+          <%= link_to 'Delete', location_event_path(@location, event), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
+          <%= link_to 'Edit', edit_location_event_path(@location, event), :class => "btn btn-info" %>
+        </div>
+      </td>
     </tr>
     <% end %>
   </tbody>

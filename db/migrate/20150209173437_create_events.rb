@@ -6,6 +6,5 @@ class CreateEvents < ActiveRecord::Migration
       t.boolean :requires_id
       t.belongs_to :location, index: true
     end
-    add_foreign_key :events, :locations
   end
 end

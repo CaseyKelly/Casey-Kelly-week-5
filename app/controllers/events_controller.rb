@@ -22,8 +22,26 @@ class EventsController < ApplicationController
       end
     end
 
+    def edit
+      @submit_name = "Update Location"
+    end
+
     def show
       @event = Event.find(params[:id])
+    end
+
+    def destroy
+
+      @event.destroy
+      redirect_to location_path(id: params[:location_id]), notice: 'Project was successfully deleted.'
+    end
+
+    def update
+      if @event.update(event_params)
+        redirect_to locations_path, notice: 'Project was successfully updated.'
+      else
+        render :edit
+      end
     end
 
     private

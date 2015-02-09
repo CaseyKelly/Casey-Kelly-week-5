@@ -31,5 +31,4 @@ ActiveRecord::Schema.define(version: 20150209173437) do
     t.string "zipcode"
   end
 
-  add_foreign_key "events", "locations"
 end
