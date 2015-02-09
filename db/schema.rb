@@ -23,10 +23,13 @@ ActiveRecord::Schema.define(version: 20150209173437) do
     t.integer "location_id"
   end
 
+  add_index "events", ["location_id"], name: "index_events_on_location_id", using: :btree
+
   create_table "locations", force: :cascade do |t|
     t.string "name"
     t.string "address"
     t.string "zipcode"
   end
 
+  add_foreign_key "events", "locations"
 end

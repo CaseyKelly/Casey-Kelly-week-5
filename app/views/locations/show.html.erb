@@ -1,7 +1,6 @@
 <div class="page-header">
   <div class="pull-right">
-    <%= link_to 'Edit', edit_location_path, :class => "btn btn-info" %>
-    <%= link_to 'Delete', @location, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
+    <%= link_to 'Edit Location', edit_location_path, :class => "btn btn-info" %>
   </div>
   <h1><%= @location.name %></h1>
 </div>
@@ -25,3 +24,25 @@
     <dd><%= @location.zipcode %></dd>
   </p>
 </dl>
+
+<h1><%= @location.name %>'s Events</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Date</th>
+      <th>Requires ID?</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @location.events.each do |event| %>
+    <tr>
+      <td><%= event.description %></td>
+      <td><%= event.date %></td>
+      <td><%= event.requires_id %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

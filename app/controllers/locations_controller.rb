@@ -23,6 +23,14 @@ class LocationsController < ApplicationController
       end
     end
 
+    def update
+      if @location.update(location_params)
+        redirect_to @location, notice: 'Project was successfully updated.'
+      else
+        render :edit
+      end
+    end
+
     def show
     end
 
