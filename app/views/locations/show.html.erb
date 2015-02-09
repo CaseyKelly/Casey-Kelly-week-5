@@ -1,0 +1,27 @@
+<div class="page-header">
+  <div class="pull-right">
+    <%= link_to 'Edit', edit_location_path, :class => "btn btn-info" %>
+    <%= link_to 'Delete', @location, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
+  </div>
+  <h1><%= @location.name %></h1>
+</div>
+
+<ol class="breadcrumb">
+  <li><a href="/locations">Locations</a></li>
+  <li class="active"><%= @location.name %></li>
+</ol>
+
+<dl class="dl-horizontal">
+  <p>
+    <dt>Name</dt>
+    <dd><%= @location.name %></dd>
+  </p>
+  <p>
+    <dt>Address</dt>
+    <dd><%= @location.address %></dd>
+  </p>
+  <p>
+    <dt>Zip Code</dt>
+    <dd><%= @location.zipcode %></dd>
+  </p>
+</dl>
