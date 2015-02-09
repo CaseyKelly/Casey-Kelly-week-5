@@ -1,0 +1,24 @@
+<div class="page-header">
+  <div class="pull-right">
+    <%= link_to 'Edit Event', edit_event_path, :class => "btn btn-info" %>
+  </div>
+  <h1><%= @event.description %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <p>
+    <dt>Description</dt>
+    <dd><%= @event.description %></dd>
+  </p>
+  <p>
+    <dt>Address</dt>
+    <dd><%= @event.date %></dd>
+  </p>
+  <p>
+    <dt>Zip Code</dt>
+    <dd><%= @event.requires_id %></dd>
+  </p>
+  <p>
+    <dd><%= link_to 'Delete', location_event_path, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></dd>
+  </p>
+</dl>

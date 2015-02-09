@@ -39,7 +39,7 @@
   <tbody>
     <% @location.events.each do |event| %>
     <tr>
-      <td><%= event.description %></td>
+      <td><%= link_to event.description, [@location, event] %></td>
       <td><%= event.date %></td>
       <td><%= event.requires_id %></td>
       <td>
